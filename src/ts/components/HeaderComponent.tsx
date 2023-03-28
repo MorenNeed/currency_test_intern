@@ -3,16 +3,8 @@ import ICurrency from "../interfaces/currency";
 import '../../scss/headerComponent.scss';
 import { Container, Row, Col } from "react-bootstrap";
 
-
-interface IState {
-    exchange: Array<ICurrency>
-}
 interface IProps {
     exchange: Array<ICurrency>
-}
-
-interface ISpringProps {
-    value: number;
 }
 
 export default class HeaderComponent extends React.Component<IProps> {

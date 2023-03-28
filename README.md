@@ -16,6 +16,7 @@ Technologies Used
 - TypeScript
 - React
 - Material UI
+- Bootstrap
 
 ## Usage
 
@@ -27,4 +28,4 @@ The converted value will be automatically calculated and displayed in the second
 
 ## Credits
 
-This application was developed by Oleksii Roshchupkin. The exchange rates were fetched using the [Name of Public API] API.
+This application was developed by Oleksii Roshchupkin. The exchange rates were fetched using the Національний банк України API.
