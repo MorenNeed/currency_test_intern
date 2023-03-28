@@ -27,9 +27,13 @@ class App extends React.Component<IProps, IState> {
   render(): React.ReactNode {
     return (
       <div className='App'>
+        <div className='images-container'>
+          <img className='background1-image' src="/images/background_1.jpg" alt='background1' />
+          <img className='background2-image' src="/images/background_2.jpg" alt='background2' />
+        </div>
         <HeaderComponent exchange={this.state.exchange} />
         <MainComponent exchange={this.state.exchange} />
-      </div> 
+      </div>
     );
   }
 }

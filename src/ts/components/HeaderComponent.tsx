@@ -24,21 +24,21 @@ export default class HeaderComponent extends React.Component<IProps> {
                         <h1>
                             Конвертер валют
                         </h1>
-                        <p>
-                            Валютні показники Нацбанку до гривні на поточну дату:
-                        </p>
+                        <h6>
+                            Валютні показники Національного банку до гривні на поточну дату:
+                        </h6>
                     </div>
-                    <Row className="exchange-container">
+                    <Row className="exchange-container" xxl={2} xl={2} lg={2} md={2} sm={2} xs={2}>
                         {
                             this.props.exchange.filter(currency => currency.cc !== 'UAH')
                                 .map(currency => (
                                     <Col key={currency.r030} className="currency-container">
-                                        <div
+                                        <h5
                                             className="currency-rate"
                                             style={{ transition: 'all 1s ease' }}
                                         >
                                             {currency.txt}: {currency.rate}
-                                        </div>
+                                        </h5>
                                     </Col>
                                 ))
                         }

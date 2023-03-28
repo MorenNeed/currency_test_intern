@@ -75,24 +75,26 @@ export default class MainComponent extends React.Component<IProps, IState> {
     render(): React.ReactNode {
         return (
             <main className="main">
-                <Grid container direction={"row"} justifyContent={"space-evenly"}>
+                <Grid className="main-container" container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"}>
                     <Grid item>
                         <FormControl>
                             <Grid container direction={"row"} spacing={3}>
                                 <Grid item>
-                                    <Select value={this.state.fromCurrency} onChange={this.handleFromCurrencyChange}>
-                                        {this.props.exchange.map((currency) => (
-                                            <MenuItem key={currency.cc} value={currency.cc}>
-                                                {currency.txt} ({currency.cc})
-                                            </MenuItem>
-                                        ))}
-                                    </Select>
+                                    {this.props.exchange.length > 0 && (
+                                        <Select defaultValue="" value={this.state.fromCurrency || ''} onChange={this.handleFromCurrencyChange}>
+                                            {this.props.exchange.map((currency) => (
+                                                <MenuItem key={currency.cc} value={currency.cc}>
+                                                    {currency.txt} ({currency.cc})
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    )}
                                 </Grid>
                                 <Grid item>
                                     <TextField
                                         label="Значення"
                                         type="number"
-                                        value={this.state.amount}
+                                        value={Number.isNaN(this.state.amount) ? '' : this.state.amount}
                                         onChange={this.handleAmountChange}
                                     />
                                 </Grid>
@@ -103,19 +105,22 @@ export default class MainComponent extends React.Component<IProps, IState> {
                         <FormControl>
                             <Grid container direction={"row"} spacing={3}>
                                 <Grid item>
-                                    <Select value={this.state.toCurrency} onChange={this.handleToCurrencyChange}>
-                                        {this.props.exchange.map((currency) => (
-                                            <MenuItem key={currency.cc} value={currency.cc}>
-                                                {currency.txt} ({currency.cc})
-                                            </MenuItem>
-                                        ))}
-                                    </Select>
+                                    {this.props.exchange.length > 0 && (
+                                        <Select defaultValue="" value={this.state.toCurrency || ''} onChange={this.handleToCurrencyChange}>
+                                            {this.props.exchange.map((currency) => (
+                                                <MenuItem key={currency.cc} value={currency.cc}>
+                                                    {currency.txt} ({currency.cc})
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    )}
+
                                 </Grid>
                                 <Grid item>
                                     <TextField
                                         label="Значення"
                                         type="number"
-                                        value={this.state.convertedAmount}
+                                        value={Number.isNaN(this.state.convertedAmount) ? '' : this.state.convertedAmount}
                                         onChange={this.handleConvertedAmountChange}
                                     />
                                 </Grid>
