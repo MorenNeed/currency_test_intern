@@ -81,7 +81,10 @@ export default class MainComponent extends React.Component<IProps, IState> {
                             <Grid container direction={"row"} spacing={3}>
                                 <Grid item>
                                     {this.props.exchange.length > 0 && (
-                                        <Select defaultValue="" value={this.state.fromCurrency || ''} onChange={this.handleFromCurrencyChange}>
+                                        <Select defaultValue="" value={this.state.fromCurrency || ''} onChange={this.handleFromCurrencyChange}
+                                            sx={{ width: { xs: 100, sm: 150, md: 200, lg: 250, xl: 300, xxl: 350 } }}
+
+                                        >
                                             {this.props.exchange.map((currency) => (
                                                 <MenuItem key={currency.cc} value={currency.cc}>
                                                     {currency.txt} ({currency.cc})
@@ -96,6 +99,7 @@ export default class MainComponent extends React.Component<IProps, IState> {
                                         type="number"
                                         value={Number.isNaN(this.state.amount) ? '' : this.state.amount}
                                         onChange={this.handleAmountChange}
+                                        sx={{ width: { xs: 100, sm: 150, md: 200, lg: 250, xl: 300, xxl: 350 } }}
                                     />
                                 </Grid>
                             </Grid>
@@ -106,7 +110,10 @@ export default class MainComponent extends React.Component<IProps, IState> {
                             <Grid container direction={"row"} spacing={3}>
                                 <Grid item>
                                     {this.props.exchange.length > 0 && (
-                                        <Select defaultValue="" value={this.state.toCurrency || ''} onChange={this.handleToCurrencyChange}>
+                                        <Select defaultValue="" value={this.state.toCurrency || ''} onChange={this.handleToCurrencyChange}
+                                            sx={{ width: { xs: 100, sm: 150, md: 200, lg: 250, xl: 300, xxl: 350 } }}
+
+                                        >
                                             {this.props.exchange.map((currency) => (
                                                 <MenuItem key={currency.cc} value={currency.cc}>
                                                     {currency.txt} ({currency.cc})
@@ -122,6 +129,7 @@ export default class MainComponent extends React.Component<IProps, IState> {
                                         type="number"
                                         value={Number.isNaN(this.state.convertedAmount) ? '' : this.state.convertedAmount}
                                         onChange={this.handleConvertedAmountChange}
+                                        sx={{ width: { xs: 100, sm: 150, md: 200, lg: 250, xl: 300, xxl: 350 } }}
                                     />
                                 </Grid>
                             </Grid>
